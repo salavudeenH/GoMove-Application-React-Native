@@ -43,15 +43,15 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
  `
  const Buttons = styled.TouchableOpacity`
  background-color:white;
- height:40;
- width:160;
+ height:40px;
+ width:160px;
  padding-top:2px;
  border-radius:20px;
  margin-right:10px;
  `
 
  const ButtonText = styled.Text`
- font-size:22;
+ font-size:22px;
  font-weight:400;
  padding-left:10px;
  text-align:center;

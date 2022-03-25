@@ -48,7 +48,7 @@ const Home = ({ navigation }) => {
       <Title2>Nos Meilleurs Restaurant</Title2>
       <ScrollView vertical={false} horizontal={true} showsHorizontalScrollIndicator={false}>
         {data.map((item) =>
-          <Card item={item} title={item.Name.length < 18 ? item.Name : `${item.Name.substring(0, 15)}...`}
+          <Card key={item.id} item={item} title={item.Name.length < 18 ? item.Name : `${item.Name.substring(0, 15)}...`}
             details={() => navigation.navigate('DetailsRestaurant', { id: item.id })}
             city={item.Ville} urlImage={item.images}
             specialite={item.specialite.length < 25 ? item.specialite : `${item.specialite.substring(0, 15)}...`}
@@ -65,7 +65,7 @@ const Home = ({ navigation }) => {
       <ScrollView vertical={false} horizontal={true} showsHorizontalScrollIndicator={false}>
         {Activites.map((item) =>
           <Card
-            title={item.Name.length < 18 ? item.Name : `${item.Name.substring(0, 15)}...`}
+          key={item.id} item={item} title={item.Name.length < 18 ? item.Name : `${item.Name.substring(0, 15)}...`}
             details={() => navigation.navigate('DetailsActivites', { id: item.id })}
             city={item.Ville} urlImage={item.images}
             specialite={item.prix.length < 25 ? item.prix : `${item.prix.substring(0, 15)}...`}
@@ -82,7 +82,7 @@ const Home = ({ navigation }) => {
       <ScrollView vertical={false} horizontal={true} showsHorizontalScrollIndicator={false}>
         {hotel.map((item) =>
           <Card
-            title={item.Name.length < 18 ? item.Name : `${item.Name.substring(0, 15)}...`}
+          key={item.id} item={item} title={item.Name.length < 18 ? item.Name : `${item.Name.substring(0, 15)}...`}
             details={() => navigation.navigate('DetailsHotel', { id: item.id })}
             city={item.Ville} urlImage={item.images}
             specialite={item.prix.length < 25 ? item.prix : `${item.prix.substring(0, 15)}...`}
@@ -112,30 +112,30 @@ font-weight:500;
 padding-left:10px
 `
 const Title = styled.Text`
- font-size:30;
+ font-size:30px;
  font-weight:bold;
  margin-left:20px;
  color:black`;
 const BgImage = styled.ImageBackground`
- height:500;
- width:400;
+ height:500px;
+ width:400px;
  `
 const Title2 = styled.Text`
- font-size:26;
+ font-size:26px;
  font-weight:600;
  margin-left:20px;
  margin-top:10px;
  color:black;`
 
 const Title3 = styled.Text`
- font-size:30;
+ font-size:30px;
  font-weight:bold;
  margin-left:20px;
  color:white;
  margin-top:20px;`
 
 const MainView = styled.View`
- marginTop:-10
+ margin-top:-10px;
  `
 const ImageView = styled.View`
  height:300px;
@@ -149,14 +149,14 @@ const Images = styled.ImageBackground`
 const Buttons = styled.TouchableOpacity`
  background-color:white;
  margin-top:20px
- height:40;
- width:160;
+ height:40px;
+ width:160px;
  margin-left:30px;
  border-radius:20px;
  align-items:center;
  `
 const ButtonText = styled.Text`
- font-size:22;
+ font-size:22px;
  font-weight:400;
  padding-left:10px;
  text-align:center;

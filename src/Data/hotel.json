@@ -1,6 +1,6 @@
 [
     {
-    "id":0,
+    "id":100,
     "Name":"Hyatt Regency",
     "Ville":"Paris",
     "rating":4,
@@ -14,7 +14,7 @@
     "images3":"https://assets.hotelaparis.com/uploads/pictures/000/039/080/Hyatt-Regency-Paris-Etoile-Twin-Deluxe-Room-Eiffel-Tower-View-HD.jpg"
     },
     {
-        "id":1,
+        "id":101,
         "Name":"George V",
         "Ville":"Paris",
         "rating":5,
@@ -28,7 +28,7 @@
         "images3":"https://www.kayak.fr/rimg/himg/c1/a0/80/leonardo-1115200-FPO_PAR_448_O-916298.jpg?width=720&height=576&crop=true"
     },
     {
-        "id":2,
+        "id":102,
         "Name":"The Peninsula",
         "Ville":"Paris",
         "rating":8,

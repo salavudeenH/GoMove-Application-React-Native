@@ -26,21 +26,21 @@ const Card = ({ details, urlImage, title, specialite, city, rating,item}) => {
 
   const renderRating = () => {
     for (let i = 0; i < rating; i++) {
-      stars.push(<Star>⭐️</Star>)
+      stars.push(<Star key={i}>⭐️</Star>)
     }
   }
   renderRating();
+  
+  const checkIsFav = async() =>{
+    const allFav = await readFavorite();
+    let test = allFav.filter(element => element.id === item.id)
+    setIsFav(test.length > 0)
+  }
 
   useEffect(()=>{
     checkIsFav();
   },[])
 
-  const checkIsFav = async() =>{
-    const allFav = await readFavorite();
-    let test = allFav.filter(element => element.id === item.id)
-    setIsFav(test.length > 0)
-    console.log(id)
-  }
 
   const checkFavorite = async item => {
     const allFav = await readFavorite()

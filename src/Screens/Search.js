@@ -11,22 +11,24 @@ import {
     Image,
     ImageBackground
 } from 'react-native';
-import hotel from "../Data/hotel.json"
 import VueCard from "../Component/VueCard/VueCard"
 import styled from 'styled-components'
 import SearchBar from "react-native-dynamic-search-bar";
 import Fuse from 'fuse.js'
+import hotel from "../Data/hotel.json"
 import Activites from "../Data/activites.json"
 import Restaurant from "../Data/restaurant.json"
 
+
 const Hotel = ({ navigation }) => {
+    const bigThree = [...hotel,...Activites,...Restaurant];
+
     const [query, setQuery] = useState('');
 
-    const fuse = new Fuse(hotel, {
+    const fuse = new Fuse(bigThree, {
         keys: [
             "Name",
             "Ville",
-            "prix"
         ]
     })
 
@@ -58,46 +60,17 @@ const Hotel = ({ navigation }) => {
                             />
                         ))
                         :
-                        hotel.map((item) =>
+                        bigThree.map((item) =>
                             <VueCard
                                 key={item.id}
                                 details={() => navigation.navigate('DetailsHotel', { id: item.id })}
                                 title={item.Name}
                                 urlImage={item.images}
-                                info={item.prix}
                                 ville={item.Ville}
                                 rating={item.rating}
                             />
                         )
                 }
-            </MainView>
-            <MainView>
-               {
-                  Activites.map((item) =>
-                            <VueCard
-                                key={item.id}
-                                details={() => navigation.navigate('DetailsActivites', { id: item.id })}
-                                title={item.Name.length < 20 ? item.Name : `${item.Name.substring(0, 20)}...`}
-                                urlImage={item.images}
-                                info={item.specialite}
-                                ville={item.Ville}
-                                rating={item.rating}
-                            />
-                        )}
-            </MainView>
-            <MainView>
-               {
-                  Restaurant.map((item) =>
-                            <VueCard
-                                key={item.id}
-                                details={() => navigation.navigate('DetailsRestaurant', { id: item.id })}
-                                title={item.Name.length < 20 ? item.Name : `${item.Name.substring(0, 20)}...`}
-                                urlImage={item.images}
-                                info={item.specialite}
-                                ville={item.Ville}
-                                rating={item.rating}
-                            />
-                        )}
             </MainView>
         </SlView>
     );
