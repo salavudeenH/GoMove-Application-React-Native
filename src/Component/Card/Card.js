@@ -16,7 +16,7 @@ import data from "../../Data/restaurant.json"
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import readFavorite from '../../utils/readFavorite'
 import addToFavorite from '../../utils/addToFavorite'
-
+import removeFromFavorite from "../../utils/removeFromFavorite"
 // data.find(x => x.id === 1)
 
 
@@ -30,37 +30,32 @@ const Card = ({ details, urlImage, title, specialite, city, rating,item}) => {
     }
   }
   renderRating();
-  // setIsFav(prevState => !prevState)
 
   useEffect(()=>{
-    
+    checkIsFav();
   },[])
-  
-  // const checkFavorite = async id => {
-  //   const allFav = await readFavorite()
 
-  //   const index = allFav.map(f => f.id).findIndex(itemId => itemId === id)
-  //   if (index === -1) {
-  //     addToFavorite(id)
-  //   } else {
-  //     removeFromFavorite(id)
-  //   }
-  // }
+  const checkIsFav = async() =>{
+    const allFav = await readFavorite();
+    let test = allFav.filter(element => element.id === item.id)
+    setIsFav(test.length > 0)
+    console.log(id)
+  }
 
   const checkFavorite = async item => {
     const allFav = await readFavorite()
 
     const index = allFav.map(f => f.id).findIndex(itemId => itemId === item.id)
     if (index === -1) {
-      addToFavorite(item)
+     await addToFavorite(item)
+     checkIsFav();
     } else {
-      removeFromFavorite(item)
+     await removeFromFavorite(item)
+     checkIsFav();
     }
+    
   }
-
-  checkFavorite(item);
-
-
+  
 
   return (
     <TouchableOpacity onPress={details}>

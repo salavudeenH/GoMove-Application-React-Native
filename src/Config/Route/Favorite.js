@@ -8,8 +8,7 @@ import FlashMessage from "react-native-flash-message";
 import DetailsRestaurant from '../../Screens/DetailsRestaurant';
 import DetailsActivites from '../../Screens/DetailsActivites';
 import DetailsHotel from '../../Screens/DetailsHotel';
-import Search from '../../Screens/Search';
-import Favorite from '../../Screens/Favorite';
+import Favorites from '../../Screens/Favorite';
 import faq from "../../Screens/faq";
 
 const MyStack = () => {
@@ -18,7 +17,7 @@ const Stack = createNativeStackNavigator();
       <Stack.Navigator>
          <Stack.Screen
           name="Favorite"
-          component={Favorite}
+          component={Favorites}
           options={{
             headerBackTitle:"",
             headerTintColor: 'black',

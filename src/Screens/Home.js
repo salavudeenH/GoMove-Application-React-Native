@@ -11,6 +11,7 @@ import {
   Image,
   ImageBackground
 } from 'react-native';
+
 import data from "../Data/restaurant.json"
 import Activites from "../Data/activites.json"
 import hotel from "../Data/hotel.json"
@@ -28,7 +29,7 @@ import addToFavorite from '../utils/addToFavorite'
 
 const Home = ({ navigation }) => {
      const [isFav, setIsFav] = useState(false);
-  
+    // AsyncStorage.clear();
 
   return (
     <SlView>
@@ -47,7 +48,7 @@ const Home = ({ navigation }) => {
       <Title2>Nos Meilleurs Restaurant</Title2>
       <ScrollView vertical={false} horizontal={true} showsHorizontalScrollIndicator={false}>
         {data.map((item) =>
-          <Card item={item.id} title={item.Name.length < 18 ? item.Name : `${item.Name.substring(0, 15)}...`}
+          <Card item={item} title={item.Name.length < 18 ? item.Name : `${item.Name.substring(0, 15)}...`}
             details={() => navigation.navigate('DetailsRestaurant', { id: item.id })}
             city={item.Ville} urlImage={item.images}
             specialite={item.specialite.length < 25 ? item.specialite : `${item.specialite.substring(0, 15)}...`}
