@@ -1,0 +1,44 @@
+[
+    {
+    "id":0,
+    "Name":"Hyatt Regency",
+    "Ville":"Paris",
+    "rating":4,
+    "prix":"A partir de 200 €",
+    "Adresse":"5 rue Victor hugo",
+    "longitude":"48.8804614",
+    "latitude":"2.2844977",
+    "images":"https://pix10.agoda.net/hotelImages/11359/0/68c1bdc0dd0770cc26957d194fa0710e.jpg?ca=7&ce=1&s=1024x768",
+    "images1":"https://www.kayak.fr/rimg/himg/32/6c/dd/ice-87537372-79285421_3XL-459111.jpg?width=720&height=576&crop=true",
+    "images2":"https://www.parisinfo.com/var/otcp/sites/images/node_43/node_51/node_77884/node_77885/hyatt-regency-paris-etoile-lobby-%7C-630x405-%7C-%C2%A9-c%C3%A9cil-mathieu/21354602-1-fre-FR/Hyatt-Regency-Paris-Etoile-Lobby-%7C-630x405-%7C-%C2%A9-C%C3%A9cil-MATHIEU.jpg",
+    "images3":"https://assets.hotelaparis.com/uploads/pictures/000/039/080/Hyatt-Regency-Paris-Etoile-Twin-Deluxe-Room-Eiffel-Tower-View-HD.jpg"
+    },
+    {
+        "id":1,
+        "Name":"George V",
+        "Ville":"Paris",
+        "rating":5,
+        "prix":"A partir de 110 €",
+        "longitude":"48.86571",
+        "latitude":"2.298763",
+        "Adresse":"5 rue Victor hugo",
+        "images":"https://www.sortiraparis.com/images/80/95338/680798-george-v-la-nouvelle-carte-de-la-galerie.jpg",
+        "images1":"https://upload.wikimedia.org/wikipedia/commons/e/ee/Ferrari%2C_H%C3%B4tel_George_V%2C_Paris_August_2014.jpg",
+        "images2":"https://classycolibri.com/wp-content/uploads/George-V-Paris-Jeff-Leatham-Flowers-940x601.jpg",
+        "images3":"https://www.kayak.fr/rimg/himg/c1/a0/80/leonardo-1115200-FPO_PAR_448_O-916298.jpg?width=720&height=576&crop=true"
+    },
+    {
+        "id":2,
+        "Name":"The Peninsula",
+        "Ville":"Paris",
+        "rating":8,
+        "prix":"A partir de 1200 €",
+        "longitude":"48.8644291",
+        "latitude":"2.3012017",
+        "Adresse":"5 rue Victor hugo",
+        "images":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/The_Peninsula_Paris%2C_23_June_2014.jpg/1200px-The_Peninsula_Paris%2C_23_June_2014.jpg",
+        "images1":"https://www.luxury-design.com/wp-content/uploads/2014/05/The-Peninsula-Paris-The-Lobby-Terrace-Entrance.jpg",
+        "images2":"https://cf.bstatic.com/xdata/images/hotel/max1280x900/87600720.jpg?k=24ef82752cafe3560696a39b5c2d3336cd4c11e85326b30e4b795f9bb5219cba&o=&hp=1",
+        "images3":"https://assets.hotelaparis.com/uploads/pictures/000/028/006/Room_1064.jpg"
+    }
+]
