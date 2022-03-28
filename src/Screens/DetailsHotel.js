@@ -50,6 +50,8 @@ const Details =  ({route}) => {
 <ScrollView>
 {findData.map((item)=>
     <Detail 
+     key={item.id}
+     item={item}
      title={item.Name}
      UrlImage={item.images} 
      UrlImage1={item.images1} 

@@ -19,7 +19,7 @@ import styled from 'styled-components'
 
     const renderRating = () => {
         for (let i = 0; i < rating; i++) {
-            stars.push(<Star>⭐️</Star>)
+            stars.push(<Star key={i}>⭐️</Star>)
         }
     }
 

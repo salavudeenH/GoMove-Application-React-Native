@@ -15,7 +15,7 @@ import styled from 'styled-components';
 
 const Details =  ({route}) => {
     const {id} = route.params;
-
+    
     const findData = data.filter(x => x.id === id)
     useEffect(() => {
     },[])
@@ -50,6 +50,8 @@ const Details =  ({route}) => {
 <ScrollView>
 {findData.map((item)=>
     <Detail 
+     key={item.id}
+     item={item}
      title={item.Name}
      UrlImage={item.images} 
      UrlImage1={item.images1} 

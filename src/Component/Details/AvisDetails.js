@@ -35,7 +35,6 @@ const AvisDetails =  () => {
     const showForm = () => {
         setForm(!form);
     }
-    console.log(list)
     const handleAddAvis = () =>{
         if(nom === '' && commentaire === ''){
             alert("Entrez une valeur")
@@ -110,7 +109,7 @@ value={currentDate}
 </CommentView>
 
  {list.map((item) => 
-<CommentView>
+<CommentView key={item.id}>
 <ImageView>
 <Images source={{uri:"https://cdn.france-montagnes.com/sites/default/files/styles/facebook/public/header/sarenne_laurent-salino-29.jpg?itok=CWxRhmj1"}}/>
 <ImagesText>{item.Nom}</ImagesText>
@@ -138,7 +137,7 @@ const AvisButtonText = styled.Text`
 font-size:16px;
 text-align:center;
 justify-content:center;
-font-size:20;
+font-size:20px;
 `
 const Input = styled.TextInput`
 height: 40px;

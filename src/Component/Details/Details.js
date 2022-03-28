@@ -18,18 +18,48 @@ import styled from 'styled-components';
 import data from "../../Data/restaurant.json"
 import DatePicker from 'react-native-date-picker'
 import AvisC from "./AvisDetails"
+import Ionicons from 'react-native-vector-icons/Ionicons'
+import readFavorite from '../../utils/readFavorite'
+import addToFavorite from '../../utils/addToFavorite'
+import removeFromFavorite from "../../utils/removeFromFavorite"
 
-const Details =  ({UrlImage,title,UrlImage1,UrlImage2,UrlImage3,Adress,Ville,Aller,rating,specialite,SubTitle}) => {     
+const Details =  ({UrlImage,title,UrlImage1,UrlImage2,UrlImage3,Adress,Ville,Aller,rating,specialite,SubTitle,item}) => {     
+  const [isFav, setIsFav] = useState(false)
+
   let stars = []
 
   const renderRating = () => {
       for (let i = 0; i < rating; i++) {
-          stars.push(<Star>⭐️</Star>)
+          stars.push(<Star key={i}>⭐️</Star>)
       }
   }
 
   renderRating()
 
+  
+  const checkIsFav = async() =>{
+    const allFav = await readFavorite();
+    let test = allFav.filter(element => element.id === item.id)
+    setIsFav(test.length > 0)
+  }
+
+  useEffect(()=>{
+    checkIsFav();
+  },[])
+
+  const checkFavorite = async item => {
+    const allFav = await readFavorite()
+
+    const index = allFav.map(f => f.id).findIndex(itemId => itemId === item.id)
+    if (index === -1) {
+     await addToFavorite(item)
+     checkIsFav();
+    } else {
+     await removeFromFavorite(item)
+     checkIsFav();
+    }
+    
+  }
 
   return ( 
 <Main>
@@ -44,7 +74,19 @@ const Details =  ({UrlImage,title,UrlImage1,UrlImage2,UrlImage3,Adress,Ville,All
  closeIconColor="#fff"
  activeIndicatorStyle={{backgroundColor:"#5969DE"}}
  /> 
+ <TitleView>
 <Title>{title}</Title>
+<TouchableOpacity
+ onPress={() => checkFavorite(item)}
+ >
+<Ionicons 
+size={28} 
+style={{paddingTop:10,paddingRight:10}} 
+name={`${isFav ? 'heart' : 'heart-outline'}`} 
+color={`${isFav ? 'red' : 'black'}`}
+/>
+</TouchableOpacity>
+</TitleView>
 <AdresseView>
 <Adresse>{Adress}, {Ville}</Adresse>
 <TouchableOpacity onPress={Aller}><AdresseButton>Itinéraire</AdresseButton></TouchableOpacity>
@@ -74,7 +116,6 @@ const Title = styled.Text`
 font-size:35px;
 font-weight:bold;
 padding-left:20px;
-padding-top:10px;
 `
 const SecondTitle=styled.Text`
 font-size:25px;
@@ -109,6 +150,11 @@ margin-top:5px;
 font-size:16px;
 font-weight:300;
 padding-left:20px
+`
+const TitleView = styled.View`
+flex-direction:row;
+padding-top:10px;
+justify-content:space-between
 `
 
  export default Details;

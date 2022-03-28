@@ -7,7 +7,7 @@ import Fuse from 'fuse.js'
 const Restaurant = ({ navigation }) => {
     const [query, setQuery] = useState('');
 
-    const fuse = new Fuse(hotel, {
+    const fuse = new Fuse(data, {
         keys: [
             "Name",
             "Ville",

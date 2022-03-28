@@ -34,7 +34,7 @@ const Hotel = ({ navigation }) => {
 
     const results = fuse.search(query);
 
-    console.log(results);
+    // console.log(results);
 
     return (
         <SlView>
@@ -51,7 +51,7 @@ const Hotel = ({ navigation }) => {
                         results.map(({ item }) => (
                             <VueCard
                                 key={item.id}
-                                details={() => navigation.navigate('DetailsHotel', { id: item.id })}
+                                details={() => navigation.navigate('DetailsHotel'|| 'DetailsActivites', { id: item.id })}
                                 title={item.Name}
                                 urlImage={item.images}
                                 info={item.prix}
@@ -63,7 +63,7 @@ const Hotel = ({ navigation }) => {
                         bigThree.map((item) =>
                             <VueCard
                                 key={item.id}
-                                details={() => navigation.navigate('DetailsHotel', { id: item.id })}
+                                details={() => navigation.navigate('DetailsHotel' || 'DetailsActivites', { id: item.id })}
                                 title={item.Name}
                                 urlImage={item.images}
                                 ville={item.Ville}
