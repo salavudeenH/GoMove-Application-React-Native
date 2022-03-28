@@ -2,12 +2,11 @@ import React,{useState,useEffect} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from "../../Screens/Home"
-import Details from "../../Screens/DetailsRestaurant"
 import Tab from "./Tab"
 import FlashMessage from "react-native-flash-message";
-import DetailsRestaurant from '../../Screens/DetailsRestaurant';
-import DetailsActivites from '../../Screens/DetailsActivites';
-import DetailsHotel from '../../Screens/DetailsHotel';
+// import DetailsRestaurant from '../../Screens/DetailsRestaurant';
+import DetailsActivites from '../../Screens/Details';
+// import DetailsHotel from '../../dustbin/DetailsHotel';
 import Hotel from '../../Screens/Hotel';
 import Activites from '../../Screens/Activites';
 import Restaurant from '../../Screens/Restaurant';
@@ -66,30 +65,8 @@ const Stack = createNativeStackNavigator();
           }}
         />
         <Stack.Screen
-          name="DetailsRestaurant"
-          component={DetailsRestaurant}
-          options={{
-            headerBackTitle:"",
-            headerTintColor: 'black',
-            headerTitleStyle:{
-              color:"white"
-            }
-          }}
-        />
-        <Stack.Screen
-          name="DetailsActivites"
+          name="Details"
           component={DetailsActivites}
-          options={{
-            headerBackTitle:"",
-            headerTintColor: 'black',
-            headerTitleStyle:{
-              color:"white"
-            }
-          }}
-        />
-         <Stack.Screen
-          name="DetailsHotel"
-          component={DetailsHotel}
           options={{
             headerBackTitle:"",
             headerTintColor: 'black',

@@ -47,7 +47,7 @@ const Hotel = ({ navigation }) => {
                         results.map(({ item }) => (
                             <VueCard
                                 key={item.id}
-                                details={() => navigation.navigate('DetailsHotel', { id: item.id })}
+                                details={() => navigation.navigate('Details', { id: item.id })}
                                 title={item.Name}
                                 urlImage={item.images}
                                 info={item.prix}
@@ -59,7 +59,7 @@ const Hotel = ({ navigation }) => {
                         hotel.map((item) =>
                             <VueCard
                                 key={item.id}
-                                details={() => navigation.navigate('DetailsHotel', { id: item.id })}
+                                details={() => navigation.navigate('Details', { id: item.id })}
                                 title={item.Name}
                                 urlImage={item.images}
                                 info={item.prix}

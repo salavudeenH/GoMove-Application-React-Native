@@ -49,7 +49,7 @@ const Home = ({ navigation }) => {
       <ScrollView vertical={false} horizontal={true} showsHorizontalScrollIndicator={false}>
         {data.map((item) =>
           <Card key={item.id} item={item} title={item.Name.length < 18 ? item.Name : `${item.Name.substring(0, 15)}...`}
-            details={() => navigation.navigate('DetailsRestaurant', { id: item.id })}
+            details={() => navigation.navigate('Details', { id: item.id })}
             city={item.Ville} urlImage={item.images}
             specialite={item.specialite.length < 25 ? item.specialite : `${item.specialite.substring(0, 15)}...`}
             rating={item.rating}
@@ -66,7 +66,7 @@ const Home = ({ navigation }) => {
         {Activites.map((item) =>
           <Card
           key={item.id} item={item} title={item.Name.length < 18 ? item.Name : `${item.Name.substring(0, 15)}...`}
-            details={() => navigation.navigate('DetailsActivites', { id: item.id })}
+            details={() => navigation.navigate('Details', { id: item.id })}
             city={item.Ville} urlImage={item.images}
             specialite={item.prix.length < 25 ? item.prix : `${item.prix.substring(0, 15)}...`}
             rating={item.rating}
@@ -83,7 +83,7 @@ const Home = ({ navigation }) => {
         {hotel.map((item) =>
           <Card
           key={item.id} item={item} title={item.Name.length < 18 ? item.Name : `${item.Name.substring(0, 15)}...`}
-            details={() => navigation.navigate('DetailsHotel', { id: item.id })}
+            details={() => navigation.navigate('Details', { id: item.id })}
             city={item.Ville} urlImage={item.images}
             specialite={item.prix.length < 25 ? item.prix : `${item.prix.substring(0, 15)}...`}
             rating={item.rating}

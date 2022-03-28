@@ -9,14 +9,19 @@ import {
   View,
   Linking
 } from 'react-native';
-import data from "../Data/hotel.json"
+// import data from "../Data/activites.json"
 import Detail from "../Component/Details/Details"
 import styled from 'styled-components';
+import hotel from "../Data/hotel.json"
+import Activites from "../Data/activites.json"
+import Restaurant from "../Data/restaurant.json"
 
 const Details =  ({route}) => {
     const {id} = route.params;
 
-    const findData = data.filter(x => x.id === id)
+    const bigThree = [...hotel,...Activites,...Restaurant];
+
+    const findData = bigThree.filter(x => x.id === id)
     useEffect(() => {
     },[])
 

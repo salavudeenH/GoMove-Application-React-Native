@@ -29,7 +29,7 @@ import VueCard from "../Component/VueCard/VueCard"
    {fav.map(item => (
         <VueCard
         key={item.id}
-        details={() => navigation.navigate('DetailsActivites' || 'DetailsHotel', { id: item.id })}
+        details={() => navigation.navigate('Details', { id: item.id })}
         title={item.Name}
         urlImage={item.images}
         info={item.prix || item.specialite} 

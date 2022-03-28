@@ -32,7 +32,7 @@ import SearchBar from "react-native-dynamic-search-bar";
        results.map(({item}) => (
         <VueCard
             key={item.id}
-            details={() => navigation.navigate('DetailsActivites', {id: item.id})}  
+            details={() => navigation.navigate('Details', {id: item.id})}  
             title={item.Name}
             urlImage={item.images}
             info={item.prix}
@@ -44,7 +44,7 @@ import SearchBar from "react-native-dynamic-search-bar";
     Activites.map((item) =>
         <VueCard
         key={item.id}
-        details={() => navigation.navigate('DetailsActivites', {id: item.id})}  
+        details={() => navigation.navigate('Details', {id: item.id})}  
         title={item.Name}
         urlImage={item.images}
         info={item.prix}

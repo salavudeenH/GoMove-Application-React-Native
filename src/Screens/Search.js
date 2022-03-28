@@ -51,8 +51,8 @@ const Hotel = ({ navigation }) => {
                         results.map(({ item }) => (
                             <VueCard
                                 key={item.id}
-                                details={() => navigation.navigate('DetailsHotel'|| 'DetailsActivites', { id: item.id })}
-                                title={item.Name}
+                                details={() => navigation.navigate('Details', { id: item.id })}
+                                title={item.Name.length < 25 ? item.Name : `${item.Name.substring(0, 15)}...`}
                                 urlImage={item.images}
                                 info={item.prix}
                                 ville={item.Ville}
@@ -63,10 +63,11 @@ const Hotel = ({ navigation }) => {
                         bigThree.map((item) =>
                             <VueCard
                                 key={item.id}
-                                details={() => navigation.navigate('DetailsHotel' || 'DetailsActivites', { id: item.id })}
-                                title={item.Name}
+                                details={() => navigation.navigate('Details', { id: item.id })}
+                                title={item.Name.length < 25 ? item.Name : `${item.Name.substring(0, 15)}...`}
                                 urlImage={item.images}
                                 ville={item.Ville}
+                                info={item.prix || item.specialite} 
                                 rating={item.rating}
                             />
                         )

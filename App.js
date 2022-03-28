@@ -9,7 +9,6 @@ import {
   View,
 } from 'react-native';
 import Route from "./src/Config/Route/HomeScreen"
-import Splashscreen from "./src/Screens/SplashScreen"
 const App =  () => {
   const isDarkMode = useColorScheme() === 'dark';
   return (

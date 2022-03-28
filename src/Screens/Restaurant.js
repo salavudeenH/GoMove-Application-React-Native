@@ -32,7 +32,7 @@ const Restaurant = ({ navigation }) => {
                         results.map(({ item }) => (
                             <VueCard
                                 key={item.id}
-                                details={() => navigation.navigate('DetailsRestaurant', { id: item.id })}
+                                details={() => navigation.navigate('Details', { id: item.id })}
                                 title={item.Name}
                                 urlImage={item.images}
                                 info={item.prix}
@@ -44,7 +44,7 @@ const Restaurant = ({ navigation }) => {
                         data.map((item) =>
                             <VueCard
                                 key={item.id}
-                                details={() => navigation.navigate('DetailsRestaurant', { id: item.id })}
+                                details={() => navigation.navigate('Details', { id: item.id })}
                                 title={item.Name.length < 20 ? item.Name : `${item.Name.substring(0, 20)}...`}
                                 urlImage={item.images}
                                 info={item.specialite}
