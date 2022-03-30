@@ -1,7 +1,7 @@
 # GoMove-Application-React-Native
 
 Application goMove pour consulter les avis des hotels, des restaurant
-
+## Tester l'appli en IOS de préférence, la version Android est en cours de maintenance
 ## IOS : 
  ### npm install
  Ensuite sur le dossier IOS : 
