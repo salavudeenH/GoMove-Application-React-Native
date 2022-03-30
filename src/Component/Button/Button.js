@@ -1,23 +1,8 @@
 import React,{useState,useEffect,useRef} from 'react';
-// import Icon from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons'
-
+ import {ScrollView} from 'react-native';
+ // import Icon from 'react-native-vector-icons/FontAwesome';
 // Icon.loadFont();
-
- import {
-   SafeAreaView,
-   ScrollView,
-   StatusBar,
-   StyleSheet,
-   Text,
-   useColorScheme,
-   View,
-   TextInput,
-   Image,
-   ImageBackground,
-   TouchableOpacity
- } from 'react-native';
-
  import styled from 'styled-components'
  
  const Button =  ({hotel,Activites,Restaurant}) => {
