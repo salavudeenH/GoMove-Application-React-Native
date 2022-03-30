@@ -1,17 +1,27 @@
 import React,{useState} from 'react';
 import styled from 'styled-components'
-import FaqCard from "../Component/Faq/index"
-import faqQuestion from "../Data/faq.json"
- const Faq =  ({}) => {    
+
+ const Faq =  ({question,reponse}) => {
+    const [isActive, setIsActive] = useState(false);
+    
    return (
-    <SlView>
    <MainView>
-   <Title>Questions fréquemment posées</Title>
-       {faqQuestion.map((item)=>
-       <FaqCard question={item.title} reponse={item.content}/>
-       )}
+   <Button
+    onPress={() => setIsActive(!isActive)}
+    >
+   <ForumView>
+    <Question>
+    {question}
+    </Question>
+     
+   </ForumView>
+   </Button>
+   {isActive &&
+    <Reponse>
+        {reponse}
+    </Reponse>
+     }
     </MainView>
-    </SlView>
    );
  };
  
@@ -27,7 +37,6 @@ text-align:center;
 `
 const MainView = styled.View`
 align-items:center
-backgroundColor:white
 `
 const Reponse = styled.Text`
 margin-left:10px;

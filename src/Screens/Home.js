@@ -1,16 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-  TextInput,
-  Image,
-  ImageBackground
-} from 'react-native';
+import {ScrollView,View} from 'react-native';
 
 import data from "../Data/restaurant.json"
 import Activites from "../Data/activites.json"
@@ -28,8 +17,8 @@ import readFavorite from '../utils/readFavorite'
 import addToFavorite from '../utils/addToFavorite'
 
 const Home = ({ navigation }) => {
-     const [isFav, setIsFav] = useState(false);
-    // AsyncStorage.clear();
+  const [isFav, setIsFav] = useState(false);
+  // AsyncStorage.clear();
 
   return (
     <SlView>
@@ -53,7 +42,7 @@ const Home = ({ navigation }) => {
             city={item.Ville} urlImage={item.images}
             specialite={item.specialite.length < 25 ? item.specialite : `${item.specialite.substring(0, 15)}...`}
             rating={item.rating}
-             />
+          />
         )}
       </ScrollView>
       <ImageView>
@@ -65,7 +54,7 @@ const Home = ({ navigation }) => {
       <ScrollView vertical={false} horizontal={true} showsHorizontalScrollIndicator={false}>
         {Activites.map((item) =>
           <Card
-          key={item.id} item={item} title={item.Name.length < 18 ? item.Name : `${item.Name.substring(0, 15)}...`}
+            key={item.id} item={item} title={item.Name.length < 18 ? item.Name : `${item.Name.substring(0, 15)}...`}
             details={() => navigation.navigate('Details', { id: item.id })}
             city={item.Ville} urlImage={item.images}
             specialite={item.prix.length < 25 ? item.prix : `${item.prix.substring(0, 15)}...`}
@@ -82,7 +71,7 @@ const Home = ({ navigation }) => {
       <ScrollView vertical={false} horizontal={true} showsHorizontalScrollIndicator={false}>
         {hotel.map((item) =>
           <Card
-          key={item.id} item={item} title={item.Name.length < 18 ? item.Name : `${item.Name.substring(0, 15)}...`}
+            key={item.id} item={item} title={item.Name.length < 18 ? item.Name : `${item.Name.substring(0, 15)}...`}
             details={() => navigation.navigate('Details', { id: item.id })}
             city={item.Ville} urlImage={item.images}
             specialite={item.prix.length < 25 ? item.prix : `${item.prix.substring(0, 15)}...`}
@@ -92,7 +81,13 @@ const Home = ({ navigation }) => {
       </ScrollView>
       <Title2>Retrouvez tout avec notre Communauté</Title2>
       <ImageView>
-        <Images source={social}><Buttons><ButtonText><Ionicons name={'help-circle-outline'} size={30} /> Questions</ButtonText></Buttons>
+        <Images source={social}>
+          <Buttons onPress={() => navigation.navigate('FAQ')}>
+            <ButtonView>
+              <Ionicons style={{paddingTop:2}} name={'help-circle-outline'} size={30} />
+              <ButtonInsideText>Questions</ButtonInsideText>
+              </ButtonView>
+          </Buttons>
         </Images>
       </ImageView>
       <View>
@@ -155,13 +150,16 @@ const Buttons = styled.TouchableOpacity`
  border-radius:20px;
  align-items:center;
  `
-const ButtonText = styled.Text`
+const ButtonView = styled.View`
+ flex-direction:row;
+ align-items:center;
+ justify-content:center
+ `;
+
+const ButtonInsideText = styled.Text`
  font-size:22px;
  font-weight:400;
- padding-left:10px;
- text-align:center;
- padding-right:10px;
- align-items:center;
+ padding-top:4px
  `;
 
 
