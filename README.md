@@ -12,8 +12,6 @@ Application goMove pour consulter les avis des hotels, des restaurant
 ### npm install 
 ### npx react-native run-android
 
-##(il y'a des erreurs de lancement et de l'adaptation sur android sont en cours de résolution)
-
 <div style="display:flex">
 <img src="https://user-images.githubusercontent.com/71132716/160781631-ffaa526e-7107-49a1-90dd-4453852e074e.jpg" width="200" height="400"/>
 <img src="https://user-images.githubusercontent.com/71132716/160780522-6e611dfa-3b97-40b6-a61c-c38361a85ae2.jpg" width="200" height="400"/>
